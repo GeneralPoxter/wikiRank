@@ -1,4 +1,4 @@
-import About from './About.js'
+import About from './query_input.js'
 
 const Home = () => {
   return (
