@@ -57,7 +57,7 @@ function sim(doc1, doc2, weights) {
     return dot(w1, w2) / (norm(w1) * norm(w2));
 }
 
-function getPageRank(corpus, query) {
+function getDocumentRanks(corpus, query) {
     function vectorize(document) {
         const vector = new Map();
         corpus.terms.forEach(term =>
@@ -91,5 +91,5 @@ function testSwapneel() {
     const documents = texts.map(text => parseDocument(...text));
     const corpus = createCorpus(documents);
     console.log(corpus);
-    console.log(getPageRank(corpus, documents[0]));
+    console.log(getDocumentRanks(corpus, documents[0]));
 }
