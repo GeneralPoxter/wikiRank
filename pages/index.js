@@ -1,4 +1,4 @@
-import About from './About.js'
+import About from './query_input.js'
 import Script from 'next/script'
 
 const Home = () => {
