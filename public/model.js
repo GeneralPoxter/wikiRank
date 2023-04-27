@@ -34,7 +34,7 @@ function tf(document, term) {
 }
 
 function idf(corpus, term) {
-    return Math.log10(5 / corpus.docFrequencies.get(term));
+    return Math.log10(corpus.documents.length / corpus.docFrequencies.get(term));
 }
 
 function dot(u, v) {
