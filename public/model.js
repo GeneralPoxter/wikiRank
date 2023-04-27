@@ -51,10 +51,8 @@ function norm(u) {
     ));
 }
 
-function sim(doc1, doc2, weights) {
-    const w1 = weights.get(doc1);
-    const w2 = weights.get(doc2);
-    return dot(w1, w2) / (norm(w1) * norm(w2));
+function sim(u, v) {
+    return dot(u, v) / (norm(u) * norm(v));
 }
 
 function getDocumentRanks(corpus, query) {
@@ -74,11 +72,15 @@ function getDocumentRanks(corpus, query) {
 
     const ranks = new Map();
     corpus.documents.forEach(document =>
-        ranks.set(document, sim(query, document, weights))
+        ranks.set(document, sim(weights.get(query), weights.get(document)))
     );
     return ranks;
 }
 
+/**
+ * Sample use case of the vector space model
+ * Delete this before submitting
+ */
 function testSwapneel() {
     const texts = [
         ["Q", "free elf"],
