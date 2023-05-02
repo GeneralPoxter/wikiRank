@@ -14,7 +14,7 @@ const Home = () => {
         <p className='mt-2'>Our existence as a human species was a gift by God!</p>
         <br></br>
         <img src='images/jason.jpg' className='ml-auto mr-auto max-w-[400%] transition duration-300 ease-in-out hover:shadow-lg hover:shadow-white'
-        alt='our beloved founder'/>
+          alt='our beloved founder' />
         <p className='text-1xl'>our beloved founder</p>
       </div>
       <About></About>
