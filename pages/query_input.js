@@ -39,7 +39,7 @@ class query_input extends Component{
                                 onChange={this.handleChange}
                             />
                             <p className="text-2xl">Insert keywords below: </p>
-                            <div class="input-area" id="keywords" className="w-[100%]">
+                            <div id="keywords" className="input-area w-[100%]">
                                 <input type="text" id="key-input" className="w-[100%]"/>
                             </div>
                         </label>
