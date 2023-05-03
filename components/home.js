@@ -1,5 +1,5 @@
-import About from './query_input.js'
-import Input from './output.js'
+import Input from './query_input.js'
+import Output from './output.js'
 import Script from 'next/script'
 
 export default function Home() {
@@ -14,8 +14,8 @@ export default function Home() {
                     alt='our beloved founder' />
                 <p className='text-1xl'>our beloved founder</p>
             </div>
-            <About></About>
-            <Input content={['hamburger', 'cheeseburger', 'big mac', 'whopper']}></Input>
+            <Input></Input>
+            <Output content={['hamburger', 'cheeseburger', 'big mac', 'whopper']}></Output>
             <br></br>
         </div>
     )

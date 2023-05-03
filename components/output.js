@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function Output({ content }) {
-    const swag = content.map((item, i) => {
+    const swag = content?.map((item, i) => {
         return (
             <div className="mb-2 text-left">
                 <p>{i + 1}: {item}</p>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import wiki from "wikijs";
 
 export default class query_input extends Component {
     constructor() {
@@ -11,14 +12,17 @@ export default class query_input extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    handleChange(e) {
+    handleChange() {
         this.setState({
             textAreaValue: event.target.value,
         })
     }
 
-    handleSubmit(e) {
-        alert('eeee: ' + this.state.textAreaValue);
+    async handleSubmit() {
+        const content = await wiki().page(this.state.textAreaValue).then(page => page.rawContent());
+
+        alert('search entry: ' + this.state.textAreaValue + " and content: " + content);
+
         this.setState({ show: true })
         event.preventDefault();
     }
@@ -37,7 +41,7 @@ export default class query_input extends Component {
                                 onChange={this.handleChange}
                             />
                             <p className="text-2xl">Insert keywords below: </p>
-                            <div class="input-area" id="keywords" className="w-[100%]">
+                            <div className="input-area w-[100%]" id="keywords">
                                 <input type="text" id="key-input" className="w-[100%]" />
                             </div>
                         </label>
