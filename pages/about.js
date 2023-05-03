@@ -1,28 +1,41 @@
-import Bar from '../components/linkbar.js'
+import Header from '../components/header.js'
 
 export default function About() {
     return (
         <div className='bg-[#1e1e2e]'>
-            <Bar></Bar>
+            <Header></Header>
             <div className='relative top-[10px] p-3 w-[50%] m-auto bg-black bg-opacity-60 shadow-lg shadow-black'>
-                <h1 className='font-bold text-[350%] text-center text-white'>About Us</h1>
-                <p className='mt-2 text-white italic text-center'>"I am out of steam and going to cream"</p>
-                <br></br>
                 <div className='body'>
-                    <div className='text-[200%] font-bold w-auto'>
-                        <h1>About SwapWikiMachine</h1>
+                    <div className='text-[200%] font-bold w-auto pb-3'>
+                        <h1>Why wikiRank?</h1>
                     </div>
-                    <div className='text-left bg-[grey] p-3 bg-opacity-30 text-white'>
-                        <p>Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedia is your friend -- but it's so big! SwapWikiMachine determines the most relevant Wikipedia pages to your text using the vector space model. Happy learning!</p>
-                    </div>
+                    <p className='text-lg'>Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedia is your friend &#8212; but it's so big! wikiRank analyzes your text to determine the most relevant Wikipedia pages using the vector space model. Happy learning!</p>
                 </div>
                 <br></br>
                 <div className='body'>
-                    <div className='text-[200%] font-bold w-auto'>
+                    <div className='text-[200%] font-bold w-auto pb-3'>
                         <h1>Instructions</h1>
                     </div>
-                    <div className='text-left text-[120%] bg-[grey] p-3 bg-opacity-30 text-white'>
-                        <ol className="list-decimal ml-5">
+                    <div className='text-lg'>
+                        <ol className="list-decimal pl-8">
+                            <li>Paste the text you want to study in the top text box</li>
+                            <li>Enter the relevant keywords separated by commas (,)</li>
+                            <li>Press the rank button and enjoy the Wikipedia article rankings</li>
+                        </ol>
+                    </div>
+                    <br></br>
+                    <p className='text-lg'>Here's an example use case! Suppose I want to read Gerard Salton's celebrated paper on the vector space model, but I first need some background knowledge from Wikipedia. I can do this by pasting into the first box the paper's abstract:</p>
+                    <blockquote class="p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+                        <p class="text-sm italic font-medium leading-relaxed text-gray-900 dark:text-white">In a document retrieval, or other pattern matching environment where stored entities (documents) are compared with each other or with incoming patterns (search requests), it appears that the best indexing (property) space is one where each entity lies as far away from the others as possible; in these circumstances the value of an indexing system may be expressible as a function of the density of the object space; in particular, retrieval performance may correlate inversely with space density. An approach based on space density computations is used to choose an optimum indexing vocabulary for a collection of documents. Typical evaluation results are shown, demonstating the usefulness of the model.</p>
+                        <p class="pl-10 text-sm bold font-medium leading-relaxed text-gray-700 dark:text-white">&#8212; "A vector space model for automatic indexing" (Salton, Wong, & Yang 1975)</p>
+                    </blockquote>
+                    <p className='text-lg'>I can then paste into the keywords box the following keywords from the paper:</p>
+                    <blockquote class="p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+                        <p class="text-sm bold font-medium leading-relaxed text-gray-700 dark:text-white">automatic information retrieval, automatic indexing, content analysis, document space</p>
+                    </blockquote>
+                    <p className='text-lg'>These keywords define the set of articles over which the model will rank the most relevant pages for me to read. After hitting the rank button, wikiRank will recommend these top pages (and more!) for perusal:</p>
+                    <div className='text-lg'>
+                        <ol className="list-decimal pl-8">
                             <li>Paste the text you want to study in the top text box</li>
                             <li>Enter the relevant keywords separated by commas (,)</li>
                             <li>Press the rank button and enjoy the Wikipedia article rankings</li>
@@ -31,7 +44,7 @@ export default function About() {
                 </div>
                 <br></br>
                 <div class='body'>
-                    <div className='text-[200%] font-bold w-auto'>
+                    <div className='text-[200%] font-bold w-auto pb-3'>
                         <h1>Vector Space Model</h1>
                     </div>
                     <div className='text-left bg-[grey] p-4 mt-2 bg-opacity-30 text-white'>
@@ -49,6 +62,6 @@ export default function About() {
             <br />
             <br />
             <br />
-        </div>
+        </div >
     );
 }

@@ -1,10 +1,16 @@
 import React from "react";
 
 export default function Header() {
+    const buttonStyle = "bg-[#b4befe] mx-[0.4em] px-[1em] py-[0.2em] rounded-xl text-[#181825] hover:bg-[#929de7]";
+
     return (
-        <div className='bg-[#181825] mx-[5%] my-[2%] text-[#cdd6f4] text-center p-8'>
-            <h1 className='font-bold text-[400%] w-[80%] ml-auto mr-auto'>SwapWikiMachine</h1>
-            <p className='m-2'>Check out the — <b>collapses and dies</b></p>
+        <div className='bg-[#181825] w-screen mb-[5%] text-[#cdd6f4] p-8'>
+            <h1 className='flex justify-center font-bold text-[4.5em]'>wikiRank</h1>
+            <p className="flex justify-center italic">quickly parse any complicated document for easy answers</p>
+            <div className="flex justify-center mt-[2em]">
+                <a href="/"><button className={buttonStyle}>Home</button></a>
+                <a href="/about"><button className={buttonStyle}>About</button></a>
+            </div>
         </div>
     )
 }
