@@ -1,10 +1,16 @@
+import Head from 'next/head'
 import Header from '../components/header.js'
 
 export default function About() {
+    const aStyle = "text-blue-600 dark:text-blue-500 hover:underline";
+
     return (
         <div className='bg-[#1e1e2e]'>
+            <Head>
+                <title>wikiRank - About</title>
+            </Head>
             <Header></Header>
-            <div className='relative top-[10px] p-[3em] w-[50%] m-auto bg-[#181825] bg-opacity-60 rounded-xl shadow-lg shadow-black'>
+            <div className='relative top-[10px] p-[3em] w-[50%] m-auto text-[#cdd6f4] bg-[#181825] bg-opacity-60 rounded-xl'>
                 <div className='body'>
                     <div className='text-[200%] font-bold w-auto pb-3'>
                         <h1>Why wikiRank?</h1>
@@ -34,16 +40,16 @@ export default function About() {
                         <p className="text-sm bold font-medium leading-relaxed text-gray-700 dark:text-white">automatic information retrieval, automatic indexing, content analysis, document space</p>
                     </blockquote>
                     <p className='text-lg'>These keywords define the set of articles over which the model will rank the most relevant pages for me to read. After hitting the rank button, wikiRank will recommend these top pages (and more!) for perusal:</p>
-                    <div className='text-lg'>
+                    <div className='text-lg p-2'>
                         <ol className="list-decimal pl-8">
-                            <li><a href="https://en.wikipedia.org/wiki/Information_retrieval">Information retrieval</a></li>
-                            <li><a href="https://en.wikipedia.org/wiki/Vector_space_model">Vector space model</a></li>
-                            <li><a href="https://en.wikipedia.org/wiki/Subject_indexing">Subject indexing</a></li>
+                            <li><a className={aStyle} href="https://en.wikipedia.org/wiki/Information_retrieval">Information retrieval</a></li>
+                            <li><a className={aStyle} href="https://en.wikipedia.org/wiki/Vector_space_model">Vector space model</a></li>
+                            <li><a className={aStyle} href="https://en.wikipedia.org/wiki/Subject_indexing">Subject indexing</a></li>
                         </ol>
                     </div>
                 </div>
                 <br></br>
-                <div class='body'>
+                <div className='body'>
                     <div className='text-[200%] font-bold w-auto pb-3'>
                         <h1>Vector Space Model</h1>
                     </div>

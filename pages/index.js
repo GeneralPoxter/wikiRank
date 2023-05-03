@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Input from '../components/input.js'
 import Header from '../components/header.js'
+import Input from '../components/input.js'
 
 export default function Home() {
     return (
