@@ -1,6 +1,9 @@
+import Bar from '../components/linkbar.js'
+
 export default function About() {
     return (
         <div className='bg-[#1e1e2e]'>
+            <Bar></Bar>
             <div className='relative top-[10px] p-3 w-[50%] m-auto bg-black bg-opacity-60 shadow-lg shadow-black'>
                 <h1 className='font-bold text-[350%] text-center text-white'>About Us</h1>
                 <p className='mt-2 text-white italic text-center'>"I am out of steam and going to cream"</p>
