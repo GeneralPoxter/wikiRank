@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState} from "react";
+import { useRef, useState } from "react";
 import { getDocumentRanks } from "../lib/vector_model.js";
 import wiki from "wikijs";
 
@@ -53,13 +53,13 @@ export default function Input() {
             if (score > 0) {
                 items.push(
                     <div className='text-left'>
-                        <a href={article.url} className='text-[200%] text-bold text-white'>
+                        <a href={article.url} className='text-[200%] text-bold text-[#cdd6f4]'>
                             {article.title}
                         </a>
-                        <div className='mb-10 text-white bg-[grey] 
+                        <div className='mb-10 text-white bg-[#11111b] 
                             p-5 rounded-xl bg-opacity-40 flex items-center justify-center'>
                             <div className="w-[50%]">
-                                <div className='overflow-scroll h-[300px]'>
+                                <div className='overflow-scroll h-[300px] text-[#cdd6f4]'>
                                     <p>{article.summary}</p>
                                     <p>{score}</p>
                                 </div>
@@ -85,7 +85,7 @@ export default function Input() {
 
         if (items.length == 0) {
             items.push(
-                <div className='text-left mb-10 text-white bg-[grey] 
+                <div className='text-left mb-10 text-[#cdd6f4] bg-[grey] 
                     p-5 rounded-xl bg-opacity-40 flex items-center justify-center'>
                     <h1>No relevant articles found</h1>
                 </div>
@@ -106,6 +106,7 @@ export default function Input() {
                 className="overflow-scroll rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em] text-[150%]"
                 ref={queryTextArea}
             />
+
             <p className="text-[2em] m-[1em] text-center text-[#cdd6f4]">Insert some keywords below.</p>
             <textarea
                 className="overflow-scroll rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[1%] text-[150%]"
@@ -113,19 +114,15 @@ export default function Input() {
             />
 
             <button
-                className="bg-[#b4befe] m-[1em] px-[0.6em] py-[0.4em] text-[200%] rounded-lg text-[#181825] hover:bg-[#929de7]"
+                className="bg-[#b4befe] my-[1.5em] px-[1em] py-[0.4em] text-[200%] rounded-lg text-[#181825] hover:bg-[#929de7]"
                 onClick={fetchArticles}
             >
                 Rank it!
             </button>
 
-            <div className="w-[100%] bottom-[100px] rounded-xl bg-[#313244]">
-                <div className="mb-2 mt-2">
-                    <h className="text-[3em] text-[#cdd6f4]">Results:</h>
-                </div>
-                <div className="ml-[5%] mr-[5%] mb-10 p-4">
-                    <div className="ml-5 mr-5">
-                    </div>
+            <div>
+                <h className="text-[3em] text-[#cdd6f4]">Here are your results.</h>
+                <div className="w-[100%] my-[1.5em] rounded-xl bg-[#313244]">
                     <div className="ml-[5%] mr-[5%] mb-10 p-4">
                         <div className="ml-5 mr-5">
                             {displayResults()}
