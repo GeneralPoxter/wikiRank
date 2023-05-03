@@ -14,7 +14,7 @@
 
 ## About
 
-Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedia is your friend &#8212; but it's so big! wikiRank analyzes your text to determine the most relevant Wikipedia pages using the vector space model. Happy learning!
+Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedia is your friend &#8212; but it's so big! wikiRank analyzes your text and keywords to determine the most relevant Wikipedia pages using the vector space model. Happy learning!
 
 ## Local Deployment
 
@@ -31,16 +31,21 @@ Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedi
 
     The project can be found at http://localhost:3000/
 
-## Screenshots
+## User manual
 
+Paste the reference text you want to study in first box, and paste the relevant comma-separated keywords (e.g. journal article keywords) in the second box:
 ![yeah](examples/home.png)
+
+Press the rank button and peruse the results below:
 ![no](examples/result.png)
+
+For more details, visit our [About](https://wikirank.vercel.app/about) page.
 
 ## Special Acknowledgements
 
 Thank you to Luka Emeribe for the support and guidance! 
 
-A NETS Group 69 creation, created by
+A NETS Group 69 creation, developed by
 * [@aczw](https://github.com/aczw)
 * [@GeneralPoxter](https://github.com/GeneralPoxter)
 * [@geant04](https://github.com/geant04)
