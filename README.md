@@ -8,9 +8,7 @@
   <p align="center">
     A Wikipedia page ranker for research!
     <br />
-    <a href="https://github.com/GeneralPoxter/wikiRank"><strong>Explore the docs »</strong></a>
-    <br />
-    <a href="https://wikirank.vercel.app/">View Website</a>
+    <a href="https://wikirank.vercel.app/"><strong>View Website</strong></a>
   </p>
 </div>
 
