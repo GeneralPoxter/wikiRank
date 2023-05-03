@@ -117,7 +117,7 @@ export default function Input() {
             <p className="text-[2em] mt-[1em] text-center text-[#cdd6f4]">Searchable keywords</p>
             <textarea
                 className="overflow-scroll mt-[1em] p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[5em]"
-                placeholder="comma, separated, keywords"
+                placeholder="enter, comma, separated, keywords, here"
                 ref={keywordsTextArea}
             />
             <button
@@ -128,7 +128,7 @@ export default function Input() {
             </button>
             <div>
                 <h className="text-[4em] text-[#cdd6f4]">Results</h>
-                <div className="w-[100%] my-[1.5em] p-[3em] rounded-xl bg-[#313244]">
+                <div className="w-[100%] my-[1.5em] p-[3em] rounded-xl bg-[#313244] last:m-0">
                     {displayResults()}
                 </div>
             </div>
