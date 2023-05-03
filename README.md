@@ -33,8 +33,8 @@ Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedi
 
 ## Screenshots
 
-[examples/home.png]
-[examples/result.png]
+![yeah](examples/home.png)
+![no](examples/result.png)
 
 ## Special Acknowledgements
 
