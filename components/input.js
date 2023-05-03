@@ -35,12 +35,17 @@ export default function Input() {
                     summary: await page.summary().catch(_ => "Summary not found"),
                     text: await page.rawContent().catch(_ => ""),
                     image: await page.mainImage().catch(_ => undefined),
+                    categories: await page.categories().catch(_ => []),
                     url: page.url()
                 };
             })
         );
 
-        setRanks(getDocumentRanks(articles.filter((v, i, a) => a.findIndex(v2 => (v2.title === v.title)) === i), query));
+        const filteredArticles = articles
+            .filter((v, i, a) => a.findIndex(v2 => (v2.title === v.title)) === i)
+            .filter((v, _) => !v.categories.includes("Category:Disambiguation pages"));
+
+        setRanks(getDocumentRanks(filteredArticles, query));
     }
 
     function displayResults() {
@@ -101,15 +106,15 @@ export default function Input() {
 
     return (
         <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl text-center">
-            <p className="text-[2em] mb-[1em] text-[#cdd6f4] text-center">Text to parse:</p>
+            <p className="text-[2em] text-[#cdd6f4] text-center">Text to parse:</p>
             <textarea
-                className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em] text-[150%]"
+                className="overflow-scroll mt-[1em] p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em]"
                 placeholder="Paste your article, document, whatever, in this box"
                 ref={queryTextArea}
             />
-            <p className="text-[2em] my-[1em] text-center text-[#cdd6f4]">Searchable keywords:</p>
+            <p className="text-[2em] mt-[1em] text-center text-[#cdd6f4]">Searchable keywords:</p>
             <textarea
-                className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[5em] text-[150%]"
+                className="overflow-scroll mt-[1em] p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[5em]"
                 placeholder="comma,separated,keywords"
                 ref={keywordsTextArea}
             />
