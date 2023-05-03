@@ -1,18 +1,22 @@
-function parseDocument(wikidoc) {
+import { removeStopwords } from "stopwords";
+
+export function parseDocument(wikidoc) {
     const termFrequencies = new Map();
-    wikidoc.text.split(/\s+/).forEach(term => {
+    removeStopwords(wikidoc.text.split(/\s+/)).forEach(term => {
         term = term.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
-        if (termFrequencies.has(term)) {
-            termFrequencies.set(term, termFrequencies.get(term) + 1);
-        } else {
-            termFrequencies.set(term, 1);
+        if (term.length > 0) {
+            if (termFrequencies.has(term)) {
+                termFrequencies.set(term, termFrequencies.get(term) + 1);
+            } else {
+                termFrequencies.set(term, 1);
+            }
         }
     });
 
     return { wikidoc, termFrequencies };
 }
 
-function createCorpus(documents) {
+export function createCorpus(documents) {
     const terms = new Set();
     documents.forEach(document =>
         document.termFrequencies.forEach((_, key) => terms.add(key))
@@ -55,7 +59,7 @@ function sim(u, v) {
     return dot(u, v) / (norm(u) * norm(v));
 }
 
-function getDocumentRanks(corpus, query) {
+export function getDocumentRanks(corpus, query) {
     function vectorize(document) {
         const vector = new Map();
         corpus.terms.forEach(term =>
@@ -81,7 +85,7 @@ function getDocumentRanks(corpus, query) {
  * Sample use case of the vector space model
  * Delete this before submitting
  */
-function testSwapneel() {
+export function testSwapneel() {
     const wikidocs = [
         { title: "Q", text: "free elf" },
         { title: "A", text: "A house elf must be set free, sir. And the family will never set Dobby free ... Dobby will serve the family until he dies, sir" },
