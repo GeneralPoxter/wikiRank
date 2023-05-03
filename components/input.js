@@ -53,28 +53,30 @@ export default function Input() {
             if (score > 0) {
                 items.push(
                     <div>
-                        <div className="text-[200%] text-[#cdd6f4] flex justify-between items-end">
+                        <div className="text-[200%] text-[#cdd6f4] flex justify-between">
                             <div>
                                 <a href={article.url} target='_blank' className='underline text-[#89b4fa]'>
                                     {article.title}
                                 </a>
                             </div>
-                            <div className="text-base font-mono">Rank score: <span className="italic">{Math.round(score * 10 ** 10) / 10 ** 10}</span></div>
+                            <div className="font-mono">Score: <span className="italic">{Math.round(score * 10 ** 10) / 10 ** 10}</span></div>
                         </div>
-
-                        <div className='mt-[1em] mb-[3em] text-[#cdd6f4] bg-[#585b70] p-[2em] rounded-xl flex justify-stretch'>
-                            <div className="overflow-scroll text-[1.3em] text-left w-2/3 h-[300px] text-[#cdd6f4]">
+                        <div className='mt-[1em] mb-[3em] text-[#cdd6f4] bg-[#45475a] p-[2em] rounded-xl flex justify-stretch'>
+                            <div className="overflow-scroll text-[140%] text-left w-2/3 h-[300px]">
                                 {article.summary}
                             </div>
                             <div className="grow flex justify-center items-center">
-                                {article.image !== undefined &&
-                                    <a href={article.url} target="_blank">
-                                        <img
-                                            src={article.image}
-                                            className="object-contain h-[15em] w-[15em] 
+                                {
+                                    article.image !== undefined ?
+                                        <a href={article.url} target="_blank">
+                                            <img
+                                                src={article.image}
+                                                className="object-contain h-[15em] w-[15em] 
                                             rounded-xl transition duration-300 ease-in-out hover:scale-110"
-                                        />
-                                    </a>
+                                            />
+                                        </a>
+                                        :
+                                        <div className="text-[1.5em]">Image not available.</div>
                                 }
                             </div>
                         </div>
@@ -101,16 +103,16 @@ export default function Input() {
 
     return (
         <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl text-center">
-            <p className="text-[2em] mb-[1em] text-[#cdd6f4] text-center">Text to parse:</p>
+            <p className="text-[2em] mb-[1em] text-[#cdd6f4] text-center">Text to parse</p>
             <textarea
                 className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em] text-[150%]"
                 placeholder="Paste your article, document, whatever, in this box"
                 ref={queryTextArea}
             />
-            <p className="text-[2em] my-[1em] text-center text-[#cdd6f4]">Searchable keywords:</p>
+            <p className="text-[2em] my-[1em] text-center text-[#cdd6f4]">Searchable keywords</p>
             <textarea
                 className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[5em] text-[150%]"
-                placeholder="comma,separated,keywords"
+                placeholder="enter, comma, separated, keywords, here"
                 ref={keywordsTextArea}
             />
             <button
@@ -120,7 +122,7 @@ export default function Input() {
                 Rank it!
             </button>
             <div>
-                <h className="text-[2em] text-[#cdd6f4]">Results:</h>
+                <h className="text-[4em] text-[#cdd6f4]">Results</h>
                 <div className="w-[100%] my-[1.5em] p-[3em] rounded-xl bg-[#313244]">
                     {displayResults()}
                 </div>
