@@ -67,7 +67,7 @@ export default function Input() {
                                 {article.summary}
                             </div>
                             <div className="grow flex justify-center items-center">
-                                {article.image.length > 0 &&
+                                {article.image != undefined && article.image.length > 0 &&
                                     <a href={article.url} target="_blank">
                                         <img
                                             src={article.image}
