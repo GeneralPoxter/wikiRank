@@ -34,7 +34,7 @@ export default function Input() {
                     title: article.title,
                     summary: await page.summary().catch(_ => "Summary not found"),
                     text: await page.rawContent().catch(_ => ""),
-                    image: await page.mainImage().catch(_ => ""),
+                    image: await page.mainImage().catch(_ => undefined),
                     url: page.url()
                 };
             })
@@ -67,7 +67,7 @@ export default function Input() {
                                 {article.summary}
                             </div>
                             <div className="grow flex justify-center items-center">
-                                {article.image != undefined && article.image.length > 0 &&
+                                {article.image !== undefined &&
                                     <a href={article.url} target="_blank">
                                         <img
                                             src={article.image}
