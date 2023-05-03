@@ -57,7 +57,7 @@ export default function About() {
                 <p className="text-lg py-1">The inverse document frequency or <span className={highlightStyle}>idf</span> of a term is defined as follows: {'$$\\log_{10}\\left(\\frac{N}{1 + df}\\right)$$'} The log is a heuristic scaling factor, and we add 1 to the denominator to avoid the possibility of dividing by 0 if a term appears in no documents</p>
                 <p className="text-lg py-1">The <span className={highlightStyle}>tf-idf</span> score of a term in a document is found by multiplying <span className={highlightStyle}>tf</span> with <span className={highlightStyle}>idf</span>. To get the components of our document vector, we calculate this score for every term in our set of documents.</p>
                 <h2 className='text-xl py-2 font-bold'>What about similarity?</h2>
-                <p className="text-lg py-1">We measure the similarity between two documents by measuring the cosine of the angle between their tf-idf vectors: {'$$sim(\\vec{u},\\vec{v})=\\frac{\\vec{u}\\cdot\\vec{v}}{\\lVert\\vec{u}\\rVert\\lVert\\vec{v}\\rVert}$$'} This is aptly called the cosine similarity.</p>
+                <p className="text-lg py-1">We measure the similarity between two documents by measuring the cosine of the angle between their tf-idf vectors: {'$$sim(\\vec{u},\\vec{v})=\\frac{\\vec{u}\\cdot\\vec{v}}{\\lVert\\vec{u}\\rVert\\lVert\\vec{v}\\rVert}$$'} This is aptly called the cosine similarity, and these are the scores displayed in the page rankings.</p>
             </div>
             <Footer></Footer>
         </div>
