@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
-class query_input extends Component {
-
+export default class query_input extends Component {
     constructor() {
         super();
         this.state = {
@@ -23,7 +22,6 @@ class query_input extends Component {
         this.setState({ show: true })
         event.preventDefault();
     }
-
 
     render() {
         return (
@@ -51,5 +49,3 @@ class query_input extends Component {
         )
     }
 }
-
-export default query_input;

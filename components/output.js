@@ -1,15 +1,16 @@
 import React from "react";
 
-const page = ({ content }) => {
+export default function Output({ content }) {
     const swag = content.map((item, i) => {
         return (
             <div className="mb-2 text-left">
                 <p>{i + 1}: {item}</p>
             </div>
         );
-    }
-    );
+    });
+
     console.log(swag);
+
     return (
         <div className="mt-10 bottom-[100px] ml-[20%] mr-[20%] rounded-xl bg-slate-300 p-2 bg-opacity-90">
             <div className="mb-2 mt-2">
@@ -23,6 +24,3 @@ const page = ({ content }) => {
         </div>
     )
 }
-
-
-export default page;
