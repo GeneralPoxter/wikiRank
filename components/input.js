@@ -100,14 +100,16 @@ export default function Input() {
 
     return (
         <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl text-center">
-            <p className="text-[2em] mb-[1em] text-[#cdd6f4] text-center">Paste your article, document, whatever, in the box below.</p>
+            <p className="text-[2em] mb-[1em] text-[#cdd6f4] text-center">Text to parse:</p>
             <textarea
                 className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em] text-[150%]"
+                placeholder="Paste your article, document, whatever, in this box"
                 ref={queryTextArea}
             />
-            <p className="text-[2em] my-[1em] text-center text-[#cdd6f4]">Insert some keywords below.</p>
+            <p className="text-[2em] my-[1em] text-center text-[#cdd6f4]">Searchable keywords:</p>
             <textarea
                 className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[5em] text-[150%]"
+                placeholder="comma,separated,keywords"
                 ref={keywordsTextArea}
             />
             <button
@@ -117,8 +119,8 @@ export default function Input() {
                 Rank it!
             </button>
             <div>
-                <h className="text-[3em] text-[#cdd6f4]">Here are your results.</h>
-                <div className="w-[100%] my-[1.5em] p-[5em] rounded-xl bg-[#313244]">
+                <h className="text-[2em] text-[#cdd6f4]">Results:</h>
+                <div className="w-[100%] my-[1.5em] p-[3em] rounded-xl bg-[#313244]">
                     {displayResults()}
                 </div>
             </div>
