@@ -29,12 +29,11 @@ export default function Input() {
         const articles = await Promise.all(
             results.flat().map(async article => {
                 const page = await wiki().findById(article.pageid);
-
                 return {
                     title: article.title,
-                    summary: await page.summary(),
-                    text: await page.rawContent(),
-                    image: await page.mainImage(),
+                    summary: await page.summary().catch(_ => "Summary not found"),
+                    text: await page.rawContent().catch(_ => ""),
+                    image: await page.mainImage().catch(_ => ""),
                     url: page.url()
                 };
             })
@@ -53,31 +52,28 @@ export default function Input() {
             if (score > 0) {
                 items.push(
                     <div>
-                        <div className="text-[200%] text-[#cdd6f4] flex justify-between">
+                        <div className="text-[200%] text-[#cdd6f4] flex justify-between items-end">
                             <div>
                                 <a href={article.url} target='_blank' className='underline text-[#89b4fa]'>
                                     {article.title}
                                 </a>
                             </div>
-                            <div className="font-mono italic">{score}</div>
+                            <div className="text-base font-mono">Rank score: <span className="italic">{Math.round(score * 10 ** 10) / 10 ** 10}</span></div>
                         </div>
 
-                        <div className='mt-[1em] mb-[3em] text-[#cdd6f4] bg-[#585b70] 
-                            p-[2em] rounded-xl flex justify-between'>
+                        <div className='mt-[1em] mb-[3em] text-[#cdd6f4] bg-[#585b70] p-[2em] rounded-xl flex justify-stretch'>
                             <div className="overflow-scroll text-[1.3em] text-left w-2/3 h-[300px] text-[#cdd6f4]">
                                 {article.summary}
                             </div>
-                            <div>
-                                <a href={article.url} target="_blank">
-                                    <img
-                                        src={article.image}
-                                        className="max-h-[15em]"
-                                    />
-                                    <div
-                                        className=""></div>
-                                </a>
-
-
+                            <div className="grow flex justify-center items-center">
+                                {article.image.length > 0 &&
+                                    <a href={article.url} target="_blank">
+                                        <img
+                                            src={article.image}
+                                            className="object-contain h-[15em] w-[15em] rounded-xl"
+                                        />
+                                    </a>
+                                }
                             </div>
                         </div>
                     </div>
