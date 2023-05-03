@@ -123,7 +123,7 @@ export default function Input() {
                 className="bg-[#b4befe] m-[1em] px-[0.6em] py-[0.4em] text-[200%] rounded-lg text-[#181825] hover:bg-[#929de7]"
                 onClick={fetchArticles}
             >
-                Hit me~ agnhf
+                Rank it!
             </button>
 
             <div className="w-[100%] bottom-[100px] rounded-xl bg-[#313244]">
