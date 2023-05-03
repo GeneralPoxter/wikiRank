@@ -53,16 +53,18 @@ export default function About() {
                     <div className='text-[200%] font-bold w-auto pb-3'>
                         <h1>Vector Space Model</h1>
                     </div>
-                    <div className='text-left bg-[grey] p-4 mt-2 bg-opacity-30 text-white'>
-                        <p>Each document is represented by a vector, where each component corresponds to a term and its tf-idf weight.</p>
-                        <ul className="list-decimal ml-5">
-                            <li>Document frequency: how many documents a word appears in </li>
-                            <li>Term frequency: vector of the frequencies of a word in each document</li>
-                            <li>Weight = tf * idf = term frequency in ith document * log(# of documents / ith document frequency)</li>
-                            <li>Brief justification: term with greater frequency in the ith document and appears in fewer documents overall would “matter” more to the ith document</li>
-                            <li>Given a document’s weight vector, rank the document's relevance by comparing the cosine similarities with other document’s weight vectors (greater dot product means greater similarity)</li>
-                        </ul>
+                    <p>Each document is represented by a vector, where each component corresponds to a term and its tf-idf weight.</p>
+                    <div className='font-bold w-auto py-3'>
+                        <h2>What is a term?</h2>
                     </div>
+                    <p>A term is a fundamental unit of text analysis. In practice, these are the set of words in a document (e.g., the terms of "information retrieval" are "information" and "retrieval"). However, some parsing should still occur. For example, we do not want to distinguish between letter cases, nor would we want to include spaces, punctuation, or numbers in our analysis. Other forms of pre-processing include filtering by stopwords -- a fixed list of words determined by experts to be insignificant when ranking a document's relevance (e.g. "a", "the", "it").</p>
+                    <ul className="list-decimal ml-5">
+                        <li>Document frequency: how many documents a word appears in </li>
+                        <li>Term frequency: vector of the frequencies of a word in each document</li>
+                        <li>Weight = tf * idf = term frequency in ith document * log(# of documents / ith document frequency)</li>
+                        <li>Brief justification: term with greater frequency in the ith document and appears in fewer documents overall would “matter” more to the ith document</li>
+                        <li>Given a document’s weight vector, rank the document's relevance by comparing the cosine similarities with other document’s weight vectors (greater dot product means greater similarity)</li>
+                    </ul>
                 </div>
             </div>
             <br />
