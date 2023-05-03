@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Header from '../components/header.js'
-import Input from '../components/input.js'
+import Head from 'next/head';
+import Header from '../components/header.js';
+import Footer from '../components/footer.js';
+import Input from '../components/input.js';
 
 export default function Home() {
     return (
@@ -10,6 +11,7 @@ export default function Home() {
             </Head>
             <Header></Header>
             <Input></Input>
+            <Footer></Footer>
         </div>
     );
 }

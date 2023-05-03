@@ -121,7 +121,7 @@ export default function Input() {
                 ref={keywordsTextArea}
             />
             <button
-                className="bg-[#b4befe] my-[1.5em] px-[1em] py-[0.4em] text-[200%] rounded-lg text-[#181825] hover:bg-[#929de7]"
+                className="bg-[#b4befe] my-[1.5em] px-[1em] py-[0.4em] text-[200%] rounded-lg text-[#181825] transition duration-300 ease-in-out hover:bg-[#929de7]"
                 onClick={fetchArticles}
             >
                 Rank it!
