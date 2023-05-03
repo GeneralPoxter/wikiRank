@@ -14,6 +14,7 @@ export default function Input() {
 
         const query = queryTextArea.current?.value;
         const keywords = keywordsTextArea.current?.value;
+        const wikiAPI = wiki({ apiUrl: 'https://en.wikipedia.org/w/api.php' });
 
         if (query.length == 0 || keywords.length == 0) {
             alert("One or more of the fields are empty!");
@@ -22,13 +23,13 @@ export default function Input() {
 
         const results = await Promise.all(
             keywords.split(",").map(async keyword =>
-                await wiki().search(keyword, NUM_DOCS, true).then(data => data.results)
+                await wikiAPI.search(keyword, NUM_DOCS, true).then(data => data.results)
             )
         );
 
         const articles = await Promise.all(
             results.flat().map(async article => {
-                const page = await wiki().findById(article.pageid);
+                const page = await wikiAPI.findById(article.pageid);
                 return {
                     title: article.title,
                     summary: await page.summary().catch(_ => "Summary not found"),

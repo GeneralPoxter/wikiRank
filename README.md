@@ -4,11 +4,11 @@
 
 Lorem ipsum something something....
 
-## Deploy Instructions
+## Local Deployment
 
 1. **Start it**
     
-    Run the following commands in your proejct directory's terminal.
+    Install [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), and run the following commands in your project directory's terminal:
 
     ```
     npm install
@@ -17,7 +17,7 @@ Lorem ipsum something something....
 
 2. **Check it out!**
 
-    The project can be found at http://localhost:3000/! 
+    The project can be found at http://localhost:3000/
 
 ## Usage
 
