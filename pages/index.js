@@ -1,4 +1,4 @@
-import Input from '../components/input.js'
+import Input from '../components/Input.js'
 import Output from '../components/output.js'
 import Header from '../components/header.js'
 import Bar from '../components/linkbar.js'

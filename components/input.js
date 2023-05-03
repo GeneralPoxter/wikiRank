@@ -6,6 +6,7 @@ import wiki from "wikijs";
 export default function Input() {
     const [query, setQuery] = useState('');
     const [keywords, setKeywords] = useState('');
+    const [ranks, setRanks] = useState([]);
 
     function handleQuery(e) {
         setQuery(e.target.value);
@@ -15,16 +16,20 @@ export default function Input() {
         setKeywords(e.target.value);
     }
 
-    async function fetchWiki(e) {
+    async function fetchArticles(e) {
         e.preventDefault();
 
-        // Check whether keywords is length 0
+        const keywordsList = keywords.split(",");
+        if (keywordsList.length == 0) {
+            return;
+        }
+
         const res = await Promise.all(
-            keywords.split(",").map(async keyword => await wiki().search(keyword, 5, true).then(data => data.results)).flat()
+            keywordsList.map(async keyword => await wiki().search(keyword, 5, true).then(data => data.results))
         );
 
         const articles = await Promise.all(
-            res.map(async a => {
+            res.flat().map(async a => {
                 console.log("finding....");
                 const page = await wiki().findById(a.pageid);
 
@@ -38,9 +43,7 @@ export default function Input() {
             })
         );
 
-        const ranks = getDocumentRanks(articles, "These types of sausages were culturally imported from Germany and became popular in the United States. It became a working-class street food in the U.S., sold at stands and carts. The hot dog became closely associated with baseball and American culture. Although particularly connected with New York City and its cuisine, the hot dog eventually became ubiquitous throughout the US during the 20th century. Its preparation varies regionally in the country, emerging as an important part of other regional cuisines, including Chicago street cuisine");
-
-        console.log(ranks);
+        setRanks(getDocumentRanks(articles, query));
     }
 
     return (
@@ -59,7 +62,7 @@ export default function Input() {
                 onChange={handleKeywords}
             />
             <p className="text-[#cdd6f4]">You typed: {keywords}</p>
-            <button className="text-[#cdd6f4]" onClick={fetchWiki}>
+            <button className="text-[#cdd6f4]" onClick={fetchArticles}>
                 Penis
             </button>
         </div>
