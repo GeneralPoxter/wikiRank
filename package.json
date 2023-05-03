@@ -6,8 +6,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "next": "latest",
     "react": "18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-dom": "18.2.0",
     "wikijs": "^6.4.1"
   },
