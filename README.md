@@ -1,8 +1,22 @@
-# wikiRank Project
+<div align="center">
+  <a href="https://github.com/GeneralPoxter/wikiRank">
+    <img src="public/logo.svg" alt="Logo" width="80" height="80">
+  </a>
+
+  <h1 align="center">wikiRank</h1>
+
+  <p align="center">
+    A Wikipedia page ranker for research!
+    <br />
+    <a href="https://github.com/GeneralPoxter/wikiRank"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://wikirank.vercel.app/">View Website</a>
+  </p>
+</div>
 
 ## About
 
-Lorem ipsum something something....
+Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedia is your friend &#8212; but it's so big! wikiRank analyzes your text to determine the most relevant Wikipedia pages using the vector space model. Happy learning!
 
 ## Local Deployment
 
