@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from './navbar.js';
 
 export default function About() {
     const divtext = [
@@ -22,7 +23,8 @@ export default function About() {
     });
 
     return (
-        <div className='h-screen bg-gradient-to-r from-blue-900 to-purple-900'>
+        <div className='bg-gradient-to-r from-blue-900 to-purple-900'>
+            <Navbar></Navbar>
             <div className='relative top-[10px] mb-10 text-blue-200 p-3 w-[50%] ml-auto mr-auto bg-black bg-opacity-60 shadow-lg shadow-black'>
                 <h1 className='font-bold text-[350%] text-center'>About Us</h1>
                 <img src='images/jason.jpg' className='ml-auto mr-auto max-w-[400%] transition duration-300 ease-in-out hover:shadow-lg hover:shadow-white'
