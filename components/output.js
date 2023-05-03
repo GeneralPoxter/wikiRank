@@ -1,14 +1,8 @@
 import React from "react";
 
-<<<<<<< HEAD:components/output.js
 export default function Output({ content }) {
     const swag = content?.map((item, i) => {
         return (
-=======
-const page = ({content}) => {
-    const swag = content?.map((item, i) => {
-        return(
->>>>>>> main:pages/output.js
             <div className="mb-2 text-left">
                 <p>{i + 1}: {item}</p>
             </div>

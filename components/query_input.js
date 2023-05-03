@@ -41,13 +41,8 @@ export default class query_input extends Component {
                                 onChange={this.handleChange}
                             />
                             <p className="text-2xl">Insert keywords below: </p>
-<<<<<<< HEAD:components/query_input.js
                             <div className="input-area w-[100%]" id="keywords">
                                 <input type="text" id="key-input" className="w-[100%]" />
-=======
-                            <div id="keywords" className="input-area w-[100%]">
-                                <input type="text" id="key-input" className="w-[100%]"/>
->>>>>>> main:pages/query_input.js
                             </div>
                         </label>
                         <button type="submit" value="Submit" className='align-center bg-green-400 p-10 rounded-xl
