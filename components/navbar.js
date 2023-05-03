@@ -1,9 +1,9 @@
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
-import 'bootstrap/dist/css/bootstrap.min.css';  
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function navbar(){
+export default function navbar() {
     return (
         <div>
             <Navbar className='sticky bg-white' expand="md">
@@ -14,7 +14,7 @@ export default function navbar(){
                         <Nav className="me-auto">  
                         <Nav.Link href="index">Home</Nav.Link>  
                         <Nav.Link href="about">About</Nav.Link>
-                        </Nav>  
+                        </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>

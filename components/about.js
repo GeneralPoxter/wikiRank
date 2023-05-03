@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from './navbar.js'
+import Navbar from './navbar.js';
 
 export default function About() {
     const divtext = [
