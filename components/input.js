@@ -1,24 +1,19 @@
 import React from "react";
-import { useState } from "react";
+import { useRef, useState} from "react";
 import { getDocumentRanks } from "../lib/vector_model.js";
 import wiki from "wikijs";
 
 export default function Input() {
     const NUM_DOCS = 5;
-    const [query, setQuery] = useState('');
-    const [keywords, setKeywords] = useState('');
+    const queryTextArea = useRef('');
+    const keywordsTextArea = useRef('');
     const [ranks, setRanks] = useState([]);
-
-    function handleQuery(e) {
-        setQuery(e.target.value);
-    }
-
-    function handleKeywords(e) {
-        setKeywords(e.target.value);
-    }
 
     async function fetchArticles(e) {
         e.preventDefault();
+
+        const query = queryTextArea.current?.value;
+        const keywords = keywordsTextArea.current?.value;
 
         if (query.length == 0 || keywords.length == 0) {
             alert("One or more of the fields are empty!");
@@ -105,18 +100,16 @@ export default function Input() {
     }
 
     return (
-        <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl text-center">
+        <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl shadow-lg shadow-black text-center">
             <p className="text-[2em] m-[1em] text-[#cdd6f4] text-center">Paste your article, document, whatever, in the box below.</p>
             <textarea
                 className="overflow-scroll rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em] text-[150%]"
-                value={query}
-                onChange={handleQuery}
+                ref={queryTextArea}
             />
             <p className="text-[2em] m-[1em] text-center text-[#cdd6f4]">Insert some keywords below.</p>
             <textarea
                 className="overflow-scroll rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[1%] text-[150%]"
-                value={keywords}
-                onChange={handleKeywords}
+                ref={keywordsTextArea}
             />
 
             <button

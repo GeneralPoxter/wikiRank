@@ -4,7 +4,7 @@ export default function About() {
     return (
         <div className='bg-[#1e1e2e]'>
             <Header></Header>
-            <div className='relative top-[10px] p-3 w-[50%] m-auto bg-black bg-opacity-60 shadow-lg shadow-black'>
+            <div className='relative top-[10px] p-[3em] w-[50%] m-auto bg-[#181825] bg-opacity-60 rounded-xl shadow-lg shadow-black'>
                 <div className='body'>
                     <div className='text-[200%] font-bold w-auto pb-3'>
                         <h1>Why wikiRank?</h1>
@@ -25,13 +25,13 @@ export default function About() {
                     </div>
                     <br></br>
                     <p className='text-lg'>Here's an example use case! Suppose I want to read Gerard Salton's celebrated paper on the vector space model, but I first need some background knowledge from Wikipedia. I can do this by pasting into the first box the paper's abstract:</p>
-                    <blockquote class="p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
-                        <p class="text-sm italic font-medium leading-relaxed text-gray-900 dark:text-white">In a document retrieval, or other pattern matching environment where stored entities (documents) are compared with each other or with incoming patterns (search requests), it appears that the best indexing (property) space is one where each entity lies as far away from the others as possible; in these circumstances the value of an indexing system may be expressible as a function of the density of the object space; in particular, retrieval performance may correlate inversely with space density. An approach based on space density computations is used to choose an optimum indexing vocabulary for a collection of documents. Typical evaluation results are shown, demonstating the usefulness of the model.</p>
-                        <p class="pl-10 text-sm bold font-medium leading-relaxed text-gray-700 dark:text-white">&#8212; "A vector space model for automatic indexing" (Salton, Wong, & Yang 1975)</p>
+                    <blockquote className="p-2 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+                        <p className="text-sm italic font-medium leading-relaxed text-gray-900 dark:text-white">In a document retrieval, or other pattern matching environment where stored entities (documents) are compared with each other or with incoming patterns (search requests), it appears that the best indexing (property) space is one where each entity lies as far away from the others as possible; in these circumstances the value of an indexing system may be expressible as a function of the density of the object space; in particular, retrieval performance may correlate inversely with space density. An approach based on space density computations is used to choose an optimum indexing vocabulary for a collection of documents. Typical evaluation results are shown, demonstating the usefulness of the model.</p>
+                        <p className="pl-10 text-sm bold font-medium leading-relaxed text-gray-700 dark:text-white">&#8212; "A vector space model for automatic indexing" (Salton, Wong, & Yang 1975)</p>
                     </blockquote>
                     <p className='text-lg'>I can then paste into the keywords box the following keywords from the paper:</p>
-                    <blockquote class="p-4 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
-                        <p class="text-sm bold font-medium leading-relaxed text-gray-700 dark:text-white">automatic information retrieval, automatic indexing, content analysis, document space</p>
+                    <blockquote className="p-2 my-4 border-l-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+                        <p className="text-sm bold font-medium leading-relaxed text-gray-700 dark:text-white">automatic information retrieval, automatic indexing, content analysis, document space</p>
                     </blockquote>
                     <p className='text-lg'>These keywords define the set of articles over which the model will rank the most relevant pages for me to read. After hitting the rank button, wikiRank will recommend these top pages (and more!) for perusal:</p>
                     <div className='text-lg'>
