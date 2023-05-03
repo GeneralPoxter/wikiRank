@@ -13,7 +13,7 @@ export default function About() {
                 <title>wikiRank - About</title>
             </Head>
             <Header></Header>
-            <div className='p-[3em] mx-[5%] text-[#cdd6f4] bg-[#181825] rounded-xl'>
+            <div className='p-[3em] mx-[5%] text-[#cdd6f4] bg-[#181825] rounded-xl leading-2'>
                 <h1 className='text-[200%] font-bold w-auto pb-3'>Why wikiRank?</h1>
                 <p className='text-lg'>Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedia is your friend &#8212; but it's so big! wikiRank analyzes your text to determine the most relevant Wikipedia pages using the vector space model. Happy learning!</p>
                 <br></br>
@@ -52,7 +52,7 @@ export default function About() {
                 <h2 className='text-xl py-2 font-bold'>What is a tf-idf vector?</h2>
                 <p className='text-lg'>Term frequency or <span className={highlightStyle}>tf</span> is defined by how many times a given term appears in a given document. For example, the <span className={highlightStyle}>tf</span> of the term <span className={highlightStyle}>"frequency"</span> in the document <span className={highlightStyle}>"term frequency inverse document frequency"</span> is 2.</p>
                 <p className="text-lg">Similarly, the document frequency or <span className={highlightStyle}>df</span> of a term is the number of documents it appears in. For example, the <span className={highlightStyle}>df</span> of <span className={highlightStyle}>"frequency"</span> given 3 documents <span className={highlightStyle}>"term frequency"</span>, <span className={highlightStyle}>"inverse document frequency"</span>, and <span className={highlightStyle}>"bazinga!"</span> is 2.</p>
-                <p className="text-lg">The inverse document frequency or <span className={highlightStyle}>idf</span> is defined as follows:</p>
+                <p className="text-lg">The inverse document frequency or <span className={highlightStyle}>idf</span> of a term is defined as follows:</p>
                 <ul className="text-lg p-2 list-decimal ml-8">
                     <li>Document frequency: how many documents a word appears in </li>
                     <li>Term frequency: vector of the frequencies of a word in each document</li>

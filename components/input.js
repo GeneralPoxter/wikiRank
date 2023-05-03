@@ -110,13 +110,13 @@ export default function Input() {
         <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl text-center">
             <p className="text-[2em] text-[#cdd6f4] text-center">Text to parse</p>
             <textarea
-                className="overflow-scroll mt-[1em] p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em]"
+                className="overflow-scroll mt-[1em] p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left text-lg h-[16em]"
                 placeholder="Paste your article, document, whatever, in this box"
                 ref={queryTextArea}
             />
             <p className="text-[2em] mt-[1em] text-center text-[#cdd6f4]">Searchable keywords</p>
             <textarea
-                className="overflow-scroll mt-[1em] p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[5em]"
+                className="overflow-scroll mt-[1em] p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left text-lg h-[4em]"
                 placeholder="enter, comma, separated, keywords, here"
                 ref={keywordsTextArea}
             />
