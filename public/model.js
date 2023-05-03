@@ -1,6 +1,6 @@
-function parseDocument(name, text) {
+function parseDocument(wikidoc) {
     const termFrequencies = new Map();
-    text.split(/\s+/).forEach(term => {
+    wikidoc.text.split(/\s+/).forEach(term => {
         term = term.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
         if (termFrequencies.has(term)) {
             termFrequencies.set(term, termFrequencies.get(term) + 1);
@@ -9,7 +9,7 @@ function parseDocument(name, text) {
         }
     });
 
-    return { name, termFrequencies };
+    return { wikidoc, termFrequencies };
 }
 
 function createCorpus(documents) {
@@ -82,15 +82,15 @@ function getDocumentRanks(corpus, query) {
  * Delete this before submitting
  */
 function testSwapneel() {
-    const texts = [
-        ["Q", "free elf"],
-        ["A", "A house elf must be set free, sir. And the family will never set Dobby free ... Dobby will serve the family until he dies, sir"],
-        ["B", "Here lies Dobby, a free elf"],
-        ["C", "It's very hard to grow up in a perfect family when you're not perfect."],
-        ["D", "'Well, I'll eat it,' said Alice, 'and if it makes me grow larger, I can reach the key; and if it makes me grow smaller, I can creep under the door; so either way I'll get into the garden, and I don't care which happens!'"]
+    const wikidocs = [
+        { title: "Q", text: "free elf" },
+        { title: "A", text: "A house elf must be set free, sir. And the family will never set Dobby free ... Dobby will serve the family until he dies, sir" },
+        { title: "B", text: "Here lies Dobby, a free elf" },
+        { title: "C", text: "It's very hard to grow up in a perfect family when you're not perfect." },
+        { title: "D", text: "'Well, I'll eat it,' said Alice, 'and if it makes me grow larger, I can reach the key; and if it makes me grow smaller, I can creep under the door; so either way I'll get into the garden, and I don't care which happens!'" }
     ];
 
-    const documents = texts.map(text => parseDocument(...text));
+    const documents = wikidocs.map(wikidoc => parseDocument(wikidoc));
     const corpus = createCorpus(documents);
     console.log(corpus);
     console.log(getDocumentRanks(corpus, documents[0]));
