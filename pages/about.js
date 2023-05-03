@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from '../components/header.js';
 import Footer from '../components/footer.js';
+import Script from 'next/script'
 
 export default function About() {
     const blockStyle = "p-5 my-4 border-l-4 border-[#b4befe] bg-[#313244]";
@@ -12,6 +13,7 @@ export default function About() {
             <Head>
                 <title>wikiRank - About</title>
             </Head>
+            <Script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" />
             <Header></Header>
             <div className='p-[3em] mx-[5%] text-[#cdd6f4] bg-[#181825] rounded-xl leading-2'>
                 <h1 className='text-[200%] font-bold w-auto pb-3'>Why wikiRank?</h1>
@@ -46,20 +48,16 @@ export default function About() {
                 <br></br>
 
                 <h1 className='text-[200%] font-bold w-auto pb-3'>Vector space model</h1>
-                <p className='text-lg'>In the vector space model, each document is represented by a vector, where each component corresponds to a term and its tf-idf weight.</p>
+                <p className='text-lg py-1'>In the vector space model, each document is represented by a vector, where each component corresponds to a term and its tf-idf weight.</p>
                 <h2 className='text-xl py-2 font-bold'>What is a term?</h2>
-                <p className='text-lg'>A term is a fundamental unit of text analysis. In practice, these are the set of words in a document (e.g. the terms of <span className={highlightStyle}>"information retrieval"</span> are <span className={highlightStyle}>"information"</span> and <span className={highlightStyle}>"retrieval"</span>). However, some parsing should still occur. For example, we do not want to distinguish between letter cases, nor would we want to include spaces, punctuation, or numbers in our terms. Our model also pre-processes your text by filtering out stop words &#8212; a fixed list of words picked by experts to be insignificant when ranking a document's relevance (e.g. <span className={highlightStyle}>"a"</span>, <span className={highlightStyle}>"the"</span>, <span className={highlightStyle}>"it"</span>).</p>
+                <p className='text-lg py-1'>A term is a fundamental unit of text analysis. In practice, these are the set of words in a document (e.g. the terms of <span className={highlightStyle}>"information retrieval"</span> are <span className={highlightStyle}>"information"</span> and <span className={highlightStyle}>"retrieval"</span>). However, some parsing should still occur. For example, we do not want to distinguish between letter cases, nor would we want to include spaces, punctuation, or numbers in our terms. Our model also pre-processes your text by filtering out stop words &#8212; a fixed list of words picked by experts to be insignificant when ranking a document's relevance (e.g. <span className={highlightStyle}>"a"</span>, <span className={highlightStyle}>"the"</span>, <span className={highlightStyle}>"it"</span>).</p>
                 <h2 className='text-xl py-2 font-bold'>What is a tf-idf vector?</h2>
-                <p className='text-lg'>Term frequency or <span className={highlightStyle}>tf</span> is defined by how many times a given term appears in a given document. For example, the <span className={highlightStyle}>tf</span> of the term <span className={highlightStyle}>"frequency"</span> in the document <span className={highlightStyle}>"term frequency inverse document frequency"</span> is 2.</p>
-                <p className="text-lg">Similarly, the document frequency or <span className={highlightStyle}>df</span> of a term is the number of documents it appears in. For example, the <span className={highlightStyle}>df</span> of <span className={highlightStyle}>"frequency"</span> given 3 documents <span className={highlightStyle}>"term frequency"</span>, <span className={highlightStyle}>"inverse document frequency"</span>, and <span className={highlightStyle}>"bazinga!"</span> is 2.</p>
-                <p className="text-lg">The inverse document frequency or <span className={highlightStyle}>idf</span> of a term is defined as follows:</p>
-                <ul className="text-lg p-2 list-decimal ml-8">
-                    <li>Document frequency: how many documents a word appears in </li>
-                    <li>Term frequency: vector of the frequencies of a word in each document</li>
-                    <li>Weight = tf * idf = term frequency in ith document * log(# of documents / ith document frequency)</li>
-                    <li>Brief justification: term with greater frequency in the ith document and appears in fewer documents overall would “matter” more to the ith document</li>
-                    <li>Given a document's weight vector, rank the document's relevance by comparing the cosine similarities with other document's weight vectors (greater dot product means greater similarity)</li>
-                </ul>
+                <p className='text-lg py-1'>Term frequency or <span className={highlightStyle}>tf</span> is defined by how many times a given term appears in a given document. For example, the <span className={highlightStyle}>tf</span> of the term <span className={highlightStyle}>"frequency"</span> in the document <span className={highlightStyle}>"term frequency inverse document frequency"</span> is 2.</p>
+                <p className="text-lg py-1">Similarly, the document frequency or <span className={highlightStyle}>df</span> of a term is the number of documents it appears in. For example, the <span className={highlightStyle}>df</span> of <span className={highlightStyle}>"frequency"</span> given 3 documents <span className={highlightStyle}>"term frequency"</span>, <span className={highlightStyle}>"inverse document frequency"</span>, and <span className={highlightStyle}>"bazinga!"</span> is 2.</p>
+                <p className="text-lg py-1">The inverse document frequency or <span className={highlightStyle}>idf</span> of a term is defined as follows: {'$$\\log_{10}\\left(\\frac{N}{1 + df}\\right)$$'} The log is a heuristic scaling factor, and we add 1 to the denominator to avoid the possibility of dividing by 0 if a term appears in no documents</p>
+                <p className="text-lg py-1">The <span className={highlightStyle}>tf-idf</span> score of a term in a document is found by multiplying <span className={highlightStyle}>tf</span> with <span className={highlightStyle}>idf</span>. To get the components of our document vector, we calculate this score for every term in our set of documents.</p>
+                <h2 className='text-xl py-2 font-bold'>What about similarity?</h2>
+                <p className="text-lg py-1">We measure the similarity between two documents by measuring the cosine of the angle between their tf-idf vectors: {'$$sim(\\vec{u},\\vec{v})=\\frac{\\vec{u}\\cdot\\vec{v}}{\\lVert\\vec{u}\\rVert\\lVert\\vec{v}\\rVert}$$'} This is aptly called the cosine similarity.</p>
             </div>
             <Footer></Footer>
         </div>
