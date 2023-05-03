@@ -71,7 +71,8 @@ export default function Input() {
                                     <a href={article.url} target="_blank">
                                         <img
                                             src={article.image}
-                                            className="object-contain h-[15em] w-[15em] rounded-xl"
+                                            className="object-contain h-[15em] w-[15em] 
+                                            rounded-xl transition duration-300 ease-in-out hover:scale-110"
                                         />
                                     </a>
                                 }

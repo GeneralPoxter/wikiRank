@@ -10,7 +10,7 @@ export default function About() {
                 <title>wikiRank - About</title>
             </Head>
             <Header></Header>
-            <div className='relative top-[10px] p-[3em] w-[50%] m-auto text-[#cdd6f4] bg-[#181825] bg-opacity-60 rounded-xl'>
+            <div className='relative top-[10px] p-[3em] w-[50%] m-auto text-[#cdd6f4] bg-[#181825] rounded-xl'>
                 <div className='body'>
                     <div className='text-[200%] font-bold w-auto pb-3'>
                         <h1>Why wikiRank?</h1>
