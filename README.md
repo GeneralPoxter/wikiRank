@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/GeneralPoxter/wikiRank">
-    <img src="public/logo.svg" alt="Logo" width="80" height="80">
+    <img src="src/public/logo.svg" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">wikiRank</h1>
@@ -31,10 +31,10 @@ Can't understand a journal article? Feeling lost in a textbook chapter? Wikipedi
 
     The project can be found at http://localhost:3000/
 
-## Usage
+## Screenshots
 
-Lorem ipsum something something....
-
+[examples/home.png]
+[examples/result.png]
 
 ## Special Acknowledgements
 
@@ -44,5 +44,3 @@ A NETS Group 69 creation, created by
 * [@aczw](https://github.com/aczw)
 * [@GeneralPoxter](https://github.com/GeneralPoxter)
 * [@geant04](https://github.com/geant04)
-
-
