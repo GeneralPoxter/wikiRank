@@ -52,16 +52,21 @@ export default function Input() {
 
             if (score > 0) {
                 items.push(
-                    <div className='text-left'>
-                        <a href={article.url} className='text-[200%] underline text-bold text-[#89b4fa]'>
-                            {article.title}
-                        </a>
-                        <div className='mb-10 text-white bg-[#11111b] 
-                            p-5 rounded-xl bg-opacity-40 flex items-center justify-center'>
+                    <div>
+                        <div className="text-[200%] text-[#cdd6f4] flex justify-between">
+                            <div>
+                                <a href={article.url} target='_target' className='underline text-[#89b4fa]'>
+                                    {article.title}
+                                </a>
+                            </div>
+                            <div className="font-mono italic">{score}</div>
+                        </div>
+
+                        <div className='mt-[1em] mb-[3em] text-[#cdd6f4] bg-[#585b70] 
+                            p-[2em] rounded-xl flex justify-center'>
                             <div className="w-[50%]">
                                 <div className='overflow-scroll h-[300px] text-[#cdd6f4]'>
                                     <p>{article.summary}</p>
-                                    <p>{score}</p>
                                 </div>
                             </div>
                             <div
@@ -85,9 +90,9 @@ export default function Input() {
 
         if (items.length == 0) {
             items.push(
-                <div className='text-left mb-10 text-[#cdd6f4] bg-[grey] 
-                    p-5 rounded-xl bg-opacity-40 flex items-center justify-center'>
-                    <h1>No relevant articles found</h1>
+                <div
+                    className='text-center text-[#cdd6f4] text-[1.5em] bg-[#45475a] p-[1.5em] rounded-xl'>
+                    No relevant articles found.
                 </div>
             )
         }
