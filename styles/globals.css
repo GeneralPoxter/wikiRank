@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body {
+    text-align: left;
+    color: white;
+}
+
+.body header {
+    font-size: 350%;
+    font-weight: bold;
+    color: white;
+}

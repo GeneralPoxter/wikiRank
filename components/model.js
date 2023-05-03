@@ -1,9 +1,9 @@
 import { removeStopwords } from "stopword";
 
-export function parseDocument(wikidoc) {
+function parseDocument(wikidoc) {
     const termFrequencies = new Map();
     removeStopwords(wikidoc.text.split(/\s+/).map(term =>
-        term.replace(/[^A-Za-z0-9]/g, "").toLowerCase())
+        term.replace(/[^A-Za-z]/g, "").toLowerCase())
     ).forEach(term => {
         if (term.length > 0) {
             if (termFrequencies.has(term)) {
@@ -17,7 +17,7 @@ export function parseDocument(wikidoc) {
     return { wikidoc, termFrequencies };
 }
 
-export function createCorpus(documents) {
+function createCorpus(documents) {
     const terms = new Set();
     documents.forEach(document =>
         document.termFrequencies.forEach((_, key) => terms.add(key))
@@ -60,7 +60,12 @@ function sim(u, v) {
     return dot(u, v) / (norm(u) * norm(v));
 }
 
-export function getDocumentRanks(corpus, query) {
+export function getDocumentRanks(wikidocs, query) {
+    query = parseDocument({ text: query });
+    wikidocs = wikidocs.map(doc => parseDocument(doc));
+    wikidocs.push(query);
+    const corpus = createCorpus(wikidocs);
+
     function vectorize(document) {
         const vector = new Map();
         corpus.terms.forEach(term =>
@@ -70,7 +75,6 @@ export function getDocumentRanks(corpus, query) {
     }
 
     const weights = new Map();
-    weights.set(query, vectorize(query));
     corpus.documents.forEach(document =>
         weights.set(document, vectorize(document))
     );
@@ -88,15 +92,11 @@ export function getDocumentRanks(corpus, query) {
  */
 export function testSwapneel() {
     const wikidocs = [
-        { title: "Q", text: "free elf" },
         { title: "A", text: "A house elf must be set free, sir. And the family will never set Dobby free ... Dobby will serve the family until he dies, sir" },
         { title: "B", text: "Here lies Dobby, a free elf" },
         { title: "C", text: "It's very hard to grow up in a perfect family when you're not perfect." },
         { title: "D", text: "'Well, I'll eat it,' said Alice, 'and if it makes me grow larger, I can reach the key; and if it makes me grow smaller, I can creep under the door; so either way I'll get into the garden, and I don't care which happens!'" }
     ];
 
-    const documents = wikidocs.map(wikidoc => parseDocument(wikidoc));
-    const corpus = createCorpus(documents);
-    console.log(corpus);
-    console.log(getDocumentRanks(corpus, documents[0]));
+    console.log(getDocumentRanks(wikidocs, "free elf free elf free elf"));
 }
