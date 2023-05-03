@@ -23,12 +23,6 @@ export default class query_input extends Component {
         })
     }
 
-    // title
-    // summary
-    // text
-    // image
-    // url
-
     async handleSubmit(e) {
         e.preventDefault();
         this.setState({ show: true })
@@ -37,6 +31,7 @@ export default class query_input extends Component {
         const articles = [];
 
         for (const a of query) {
+            console.log("finding....");
             const page = await wiki().findById(a.pageid);
 
             articles.push({
@@ -65,7 +60,7 @@ export default class query_input extends Component {
                         />
                         <p className="text-2xl text-left">Insert keywords below: </p>
                         <div className="input-area w-[100%]" id="keywords">
-                            <input type="text" id="key-input" value={this.state.keywords} className="w-[100%]" />
+                            <input type="text" id="key-input" defaultValue={this.state.keywords} className="w-[100%]" />
                         </div>
                         <button type="submit" value="Submit" className='align-center bg-green-400 p-10 rounded-xl
                         mt-4 bg-opacity-90'>PUSH!</button>

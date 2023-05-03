@@ -1,10 +1,11 @@
 import Input from './query_input.js'
 import Output from './output.js'
-import Script from 'next/script'
+import Navbar from './navbar.js'
 
 export default function Home() {
     return (
         <div className='text-center bg-gradient-to-r from-blue-900 to-purple-900'>
+            <Navbar></Navbar>
             <div className='relative top-[10px] mb-10 text-blue-200 p-3 w-[50%] ml-auto mr-auto bg-black bg-opacity-60 shadow-lg shadow-black'>
                 <h1 className='font-bold text-[400%] w-[80%] ml-auto mr-auto'>SwapWikiMachine</h1>
                 <p className='mt-2'>Our existence as a human species was a gift by God!</p>

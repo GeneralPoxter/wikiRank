@@ -1,9 +1,10 @@
-import { removeStopwords } from "stopwords";
+import { removeStopwords } from "stopword";
 
 export function parseDocument(wikidoc) {
     const termFrequencies = new Map();
-    removeStopwords(wikidoc.text.split(/\s+/)).forEach(term => {
-        term = term.replace(/[^A-Za-z0-9]/g, "").toLowerCase();
+    removeStopwords(wikidoc.text.split(/\s+/).map(term =>
+        term.replace(/[^A-Za-z0-9]/g, "").toLowerCase())
+    ).forEach(term => {
         if (term.length > 0) {
             if (termFrequencies.has(term)) {
                 termFrequencies.set(term, termFrequencies.get(term) + 1);
