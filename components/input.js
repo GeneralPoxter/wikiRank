@@ -53,7 +53,7 @@ export default function Input() {
             if (score > 0) {
                 items.push(
                     <div className='text-left'>
-                        <a href={article.url} className='text-[200%] text-bold text-[#cdd6f4]'>
+                        <a href={article.url} className='text-[200%] underline text-bold text-[#89b4fa]'>
                             {article.title}
                         </a>
                         <div className='mb-10 text-white bg-[#11111b] 
@@ -100,34 +100,27 @@ export default function Input() {
     }
 
     return (
-        <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl shadow-lg shadow-black text-center">
-            <p className="text-[2em] m-[1em] text-[#cdd6f4] text-center">Paste your article, document, whatever, in the box below.</p>
+        <div className="mx-[5%] bg-[#181825] p-[3em] rounded-xl text-center">
+            <p className="text-[2em] mb-[1em] text-[#cdd6f4] text-center">Paste your article, document, whatever, in the box below.</p>
             <textarea
-                className="overflow-scroll rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em] text-[150%]"
+                className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[15em] text-[150%]"
                 ref={queryTextArea}
             />
-
-            <p className="text-[2em] m-[1em] text-center text-[#cdd6f4]">Insert some keywords below.</p>
+            <p className="text-[2em] my-[1em] text-center text-[#cdd6f4]">Insert some keywords below.</p>
             <textarea
-                className="overflow-scroll rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[1%] text-[150%]"
+                className="overflow-scroll p-[1em] rounded-xl bg-[#313244] text-[#cdd6f4] w-[100%] text-left h-[5em] text-[150%]"
                 ref={keywordsTextArea}
             />
-
             <button
                 className="bg-[#b4befe] my-[1.5em] px-[1em] py-[0.4em] text-[200%] rounded-lg text-[#181825] hover:bg-[#929de7]"
                 onClick={fetchArticles}
             >
                 Rank it!
             </button>
-
             <div>
                 <h className="text-[3em] text-[#cdd6f4]">Here are your results.</h>
-                <div className="w-[100%] my-[1.5em] rounded-xl bg-[#313244]">
-                    <div className="ml-[5%] mr-[5%] mb-10 p-4">
-                        <div className="ml-5 mr-5">
-                            {displayResults()}
-                        </div>
-                    </div>
+                <div className="w-[100%] my-[1.5em] p-[5em] rounded-xl bg-[#313244]">
+                    {displayResults()}
                 </div>
             </div>
         </div>
