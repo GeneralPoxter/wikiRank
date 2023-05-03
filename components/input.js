@@ -40,7 +40,7 @@ export default function Input() {
             })
         );
 
-        setRanks(getDocumentRanks(articles, query));
+        setRanks(getDocumentRanks(articles.filter((v, i, a) => a.findIndex(v2 => (v2.title === v.title)) === i), query));
     }
 
     function displayResults() {
