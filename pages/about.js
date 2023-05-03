@@ -36,9 +36,9 @@ export default function About() {
                     <p className='text-lg'>These keywords define the set of articles over which the model will rank the most relevant pages for me to read. After hitting the rank button, wikiRank will recommend these top pages (and more!) for perusal:</p>
                     <div className='text-lg'>
                         <ol className="list-decimal pl-8">
-                            <li>Paste the text you want to study in the top text box</li>
-                            <li>Enter the relevant keywords separated by commas (,)</li>
-                            <li>Press the rank button and enjoy the Wikipedia article rankings</li>
+                            <li><a href="https://en.wikipedia.org/wiki/Information_retrieval">Information retrieval</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Vector_space_model">Vector space model</a></li>
+                            <li><a href="https://en.wikipedia.org/wiki/Subject_indexing">Subject indexing</a></li>
                         </ol>
                     </div>
                 </div>
